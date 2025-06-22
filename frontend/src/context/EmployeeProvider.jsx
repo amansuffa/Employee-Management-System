@@ -25,7 +25,7 @@ export const EmployeeProvider = ({ children }) => {
 res = res.data
         setAllData(res);
 
-        console.log(res);
+
 
         
       } catch (error) {

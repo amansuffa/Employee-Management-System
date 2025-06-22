@@ -37,11 +37,11 @@ const handleLogin = async (email, password) => {
       
     } catch (error) {
       if (error.response) {
-        // alert(error.response.data.message || 'Invalid Credentials');
+  
               toast.error('Invalid Credentials');
             } else {
               console.error('Login Error:', error);
-              // alert('Server Error');
+         
               toast.error('Server Error');
       }
     }
