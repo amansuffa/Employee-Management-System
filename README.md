@@ -4,6 +4,26 @@ A full-stack task management application where **Admins** can create employees a
 
 ---
 
+## 🌐 Live Demo
+👉 https://employee-management-system-frontend-beryl.vercel.app/
+
+---
+
+## 🌐 Demo Credentials
+- 🔑 Admin Login
+    - 📧 Email: admin@pk.com
+    - 🔒 Password: 123
+- 👷 Employee Logins
+    | Email             | Password |
+    | ----------------- | -------- |
+    | emp1@pk.com       | 123      |
+    | emp2@pk.com       | 123      |
+    | emp3@pk.com       | 123      |
+    | emp4@pk.com       | 123      |
+    | emp5@pk.com       | 123      |
+  
+---
+
 ## 🚀 Features
 
 - 🔐 User Authentication (Admin & Employees)
@@ -47,23 +67,5 @@ frontend/
 └── index.js
 
 
----
 
-## 🌐 Live Demo
-👉 https://employee-management-system-frontend-beryl.vercel.app/
-
----
-
-## 🌐 Demo Credentials
-- 🔑 Admin Login
-    - 📧 Email: admin@pk.com
-    - 🔒 Password: 123
-- 👷 Employee Logins
-    | Email             | Password |
-    | ----------------- | -------- |
-    | emp1@pk.com       | 123      |
-    | emp2@pk.com       | 123      |
-    | emp3@pk.com       | 123      |
-    | emp4@pk.com       | 123      |
-    | emp5@pk.com       | 123      |
     
