@@ -24,6 +24,17 @@ const CreateTask = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validate that date is not in the past
+    const selectedDate = new Date(formData.date);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    if (selectedDate < today) {
+      toast.error('Task date cannot be in the past. Please select today or a future date.');
+      return;
+    }
+    
     try {
       const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/admins/${formData.assignTo}/tasks`, {
         taskTitle: formData.title,
@@ -36,7 +47,7 @@ const CreateTask = () => {
       getAllEmployees();
     } catch (error) {
       console.error('Error creating task:', error);
-      toast.error('Failed to create task.');
+      toast.error(error.response?.data?.message || 'Failed to create task.');
     }
   };
 
@@ -68,6 +79,7 @@ const CreateTask = () => {
                   name="date"
                   value={formData.date}
                   onChange={handleChange}
+                  min={new Date().toISOString().split('T')[0]}
                   className="w-full px-3 py-2 rounded-lg bg-[#2c2c2c] text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
                   required
                 />

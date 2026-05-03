@@ -33,6 +33,15 @@ try {
  const employee = await Employee.findById(id);
     if (!employee) return res.status(404).json({ message: 'Employee not found' });
 
+    // Validate that task date is not in the past
+    const selectedDate = new Date(taskDate);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    if (selectedDate < today) {
+      return res.status(400).json({ message: 'Task date cannot be in the past. Please select today or a future date.' });
+    }
+
     const newTask = {
       taskTitle,
       taskDate,
